@@ -15,7 +15,8 @@
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
                                     data-bs-target="#home-tab-pane" type="button" role="tab"
-                                    aria-controls="home-tab-pane" aria-selected="true">General <span class="counter rounded-pill px-2 py-1">10</span></button>
+                                    aria-controls="home-tab-pane" aria-selected="true">General <span
+                                        class="counter rounded-pill px-2 py-1">10</span></button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
@@ -107,20 +108,34 @@
             <section class="logs">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h4><i class="fa-solid fa-phone"></i> Active Call (100)</h4>
-                        @for (entry of activeCall; track $index) {
-                            <div class="my-1">
+                        <h4><i class="fa-solid fa-phone"></i> Active Call ({{ activeCall.length }})</h4>
+                        <div cdkDropList #activeCallList="cdkDropList" [cdkDropListData]="activeCall"
+                            [cdkDropListConnectedTo]="[followUpList]" class="list" (cdkDropListDropped)="drop($event)">
+                            @for (entry of activeCall; track $index) {
+                            <div class="my-1" cdkDrag>
                                 <app-call-entry [entry]="entry"></app-call-entry>
+                                @if (entry?.editing) {
+                                <input [(ngModel)]="entry.newName" (keypress)="handleKeyPress($event, entry)"
+                                    placeholder="Enter new title">
+                                }
                             </div>
-                        }
+                            }
+                        </div>
                     </div>
                     <div class="mt-xs-4 mt-sm-0 col-sm-6">
-                        <h4><i class="fa-solid fa-phone"></i> Follow Up (05)</h4>
-                        @for (entry of activeCall; track $index) {
-                            <div class="my-1">
+                        <h4><i class="fa-solid fa-phone"></i> Follow Up ({{ followUp.length }})</h4>
+                        <div class="list h-100" cdkDropList #followUpList="cdkDropList" [cdkDropListData]="followUp"
+                            [cdkDropListConnectedTo]="[activeCallList]" (cdkDropListDropped)="drop($event)">
+                            @for (entry of followUp; track $index) {
+                            <div class="my-1" cdkDrag>
                                 <app-call-entry [entry]="entry"></app-call-entry>
+                                @if (entry.editing) {
+                                <input [(ngModel)]="entry.newName" (keypress)="handleKeyPress($event, entry)"
+                                    placeholder="Enter new title">
+                                }
                             </div>
-                        }
+                            }
+                        </div>
                     </div>
                 </div>
             </section>

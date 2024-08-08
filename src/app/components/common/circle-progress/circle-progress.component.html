@@ -1,4 +1,4 @@
-<div class="circle-rating" *ngIf="max && current">
+<!-- <div class="circle-rating" *ngIf="max && current">
     <round-progress
   [current]="current"
   [max]="max"
@@ -18,4 +18,17 @@
   ></round-progress>
   <div class="text-content">{{current}}%</div>
 
-</div>
+</div> -->
+<circle-progress
+  [percent]="current"
+  [radius]="35"
+  [outerStrokeWidth]="5"
+  [showSubtitle]="false"
+  [showInnerStroke]="true"
+  [innerStrokeColor]="'#e7e8ea'"
+  [innerStrokeWidth]="5"
+  [outerStrokeColor]="'var(--ag-primary)'"
+  [animation]="true"
+  [space]="-5"
+  [animationDuration]="100"
+></circle-progress>

@@ -1,4 +1,4 @@
-<div class="audio-player">
+<div class="audio-player rounded-pill mb-4">
   <div id="waveform" #che></div>
   <button (click)="playPause()"><i class="fa-solid fa-circle-play" [ngClass]="playState === false ? 'fa-circle-play' : 'fa-circle-pause'"></i> {{formatTime(wavesurfer?.getCurrentTime())}}</button> 
 </div>

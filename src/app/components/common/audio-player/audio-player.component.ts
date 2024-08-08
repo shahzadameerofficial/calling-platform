@@ -10,26 +10,33 @@ import WaveSurfer from 'wavesurfer.js';
   templateUrl: './audio-player.component.html',
   styleUrl: './audio-player.component.scss'
 })
-export class AudioPlayerComponent implements OnInit, OnDestroy,AfterViewInit {
+export class AudioPlayerComponent implements OnInit, OnDestroy, AfterViewInit {
   wavesurfer: WaveSurfer | undefined;
-  getColor(){}
+  getColor() { }
   @ViewChild('che') che!: ElementRef<HTMLDivElement>;
   playState: Boolean = false
 
   constructor() { }
   ngAfterViewInit(): void {
-    this.wavesurfer = WaveSurfer.create({
-      container: this.che.nativeElement,
-      waveColor: '#E16449',
-      progressColor: 'purple',
-      height: 150,
-      barWidth: 3,
-      cursorWidth: 1,
-      backend: 'WebAudio',
-      interact: true
-    });
-    this.wavesurfer.load('assets/YPHYAG.wav');
-    this.wavesurfer.getCurrentTime
+    if (typeof window !== 'undefined') {
+      let wavcolor = 'black';
+      let progcolor = '#E16449';
+
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme && savedTheme === 'dark') {
+        wavcolor = '#E16449';
+        progcolor = '#E11249'
+      } 
+      this.wavesurfer = WaveSurfer.create({
+        container: this.che.nativeElement,
+        waveColor: wavcolor,
+        progressColor: progcolor,
+        height: 150,
+        barWidth: 3,
+        cursorWidth: 1
+      });
+      this.wavesurfer.load('assets/YPHYAG.wav');
+    }
   }
 
   ngOnInit(): void {
@@ -44,13 +51,13 @@ export class AudioPlayerComponent implements OnInit, OnDestroy,AfterViewInit {
   playPause(): void {
     if (this.wavesurfer) {
       this.wavesurfer.playPause();
-      this.playState =! this.playState
+      this.playState = !this.playState
     }
   }
-  formatTime(seconds:any) {
+  formatTime(seconds: any) {
     // Ensure the input is a number
     if (isNaN(seconds) || seconds < 0) {
-        throw new Error("Invalid input: seconds must be a non-negative number.");
+      throw new Error("Invalid input: seconds must be a non-negative number.");
     }
 
     // Calculate hours, minutes, and seconds
@@ -65,5 +72,5 @@ export class AudioPlayerComponent implements OnInit, OnDestroy,AfterViewInit {
 
     // Return formatted time
     return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
-}
+  }
 }

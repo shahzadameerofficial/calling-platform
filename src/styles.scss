@@ -1,4 +1,4 @@
-body {
+:root {
     --ag-primary: #E16449;
     --ag-white: #ffffff;
     --ag-black: #000000;
@@ -12,7 +12,27 @@ body {
     --ag-success: #2B8A3E;
     --ag-success-subtle: #E6FCF5;
     // --audio-wave: #E16449;
+    --audio-wave-fade: #ffffff;
+
 }
+[data-theme='dark'] {
+    --ag-primary: #E16449; /* Adjust as needed */
+    --ag-white: #1c1c1c;
+    --ag-black: #ffffff;
+    --ag-gray: #333333;
+    --ag-background: #121212;
+    --ag-foreground: #e0e0e0;
+    --ag-secondary: #bbbbbb;
+    --ag-secondary-subtle: #888888;
+    --ag-danger: #FF4C4C;
+    --ag-danger-subtle: #4C4C4C;
+    --ag-success: #4CAF50;
+    --ag-success-subtle: #2D2D2D;
+    --audio-wave-fade: #000000;
+    body{
+        color: var(--ag-white);
+    }
+  }
 
 * {
     font-family: 'Satoshi-Regular';
