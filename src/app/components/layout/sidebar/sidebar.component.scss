@@ -1,0 +1,32 @@
+aside{
+    .head{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: 2rem 1rem;
+        h1{
+            font-family: 'Satoshi', sans-serif;
+            font-weight: 900;
+            letter-spacing: -4px;
+            font-size: 28px;
+        }
+    }
+    nav{
+        .label{
+            color: var(--ag-secondary-subtle) !important;
+            margin-bottom: 1rem;
+            font-size: 14px;
+        }
+        a{
+            display: block;
+            padding: 1rem;
+            border-radius: 14px;
+            font-size: 13px;
+            font-weight: bold;
+            &.active{
+                background-color: var(--ag-primary);
+                color: var(--ag-white)
+            }
+        }
+    }
+}

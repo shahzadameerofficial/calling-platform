@@ -1,0 +1,96 @@
+.container-fluid{
+    section{
+        background-color: var(--ag-background);
+        border-radius: 2rem;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        &.notification{
+            .head{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .tab-title{
+                    display: flex;
+                    align-items: center;
+                    gap: .4rem;
+                    .fa-bell{
+                        position: relative;
+                        &::after{
+                            content: '';
+                            width: 8px;
+                            height: 8px;
+                            border: 1px solid var(--ag-background);
+                            border-radius: 50%;
+                            background-color: var(--ag-primary);
+                            position: absolute;
+                            top: -2px;
+                            right: -2px;
+                        }
+                    }
+                    h5{
+                        font-weight: 600;
+                    }
+                }
+                a{
+                    color: var(--ag-primary);
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+            }
+            .noti{
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 1rem;
+                a{
+                    h4{
+                        color: var(--ag-black);
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    p{
+                        color: var(--ag-secondary);
+                        font-size: 12px;
+                    }
+                    span{
+                        color: var(--ag-secondary-subtle);
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+        &.process{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            .details{
+                h3{
+                    font-size: 1.5rem;
+                    font-weight: bold;
+
+                }
+                p{
+                    font-size: 14px;
+                    span{
+                        color: var(--ag-primary);
+                    }
+                }
+            }
+            @media screen and (max-width: 1399px) {
+                &.process{
+                    flex-direction: column;
+                }
+            }
+        }
+        &.logs{
+            min-height: auto;
+            h4{
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+        }
+        &.call-centre-chart{
+            
+        }
+    }
+}

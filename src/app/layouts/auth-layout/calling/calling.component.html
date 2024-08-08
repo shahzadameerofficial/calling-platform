@@ -1,0 +1,149 @@
+<div class="row">
+    <div class="col-12">
+        <nav>
+            <a href=""><i class="fa-solid fa-arrow-left"></i> Back</a>
+        </nav>
+    </div>
+    <div class="col-12">
+        <app-audio-player></app-audio-player>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-9 col-xl-9 col-xxl-4 order-2 order-xl-1 order-xxl-1">
+        <section class="conversation">
+            <div class="head">
+                <i class="fa-regular fa-file-audio"></i>
+                <h3>Conversation</h3>
+            </div>
+            <div class="profile">
+                <img src="../../../../assets/images/Conversation.png" alt="">
+                <div class="titles">
+                    <h4>Pitter William</h4>
+                    <p>Operational Manager</p>
+                </div>
+            </div>
+            <div class="chats ag-scroll">
+                @for (chat of chats; track $index) {
+                <div class="chat" [ngClass]="chat.userId === myId ? 'me' : 'person'">
+                    <img [src]="chat.avatar" alt="">
+                    <div class="msg">
+                        <p class="text">{{chat.message}}</p>
+                        <div class="time">{{chat.timeStamp}}</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <form class="message-form">
+                <div class="input-box">
+                    <button type="button">
+                        <img src="../../../../assets/images/Files-Button.png" alt="">
+                    </button>
+                    <input type="text" placeholder="Write a message...">
+                    <button type="button" class="gallery-btn">
+                        <i class="fa-regular fa-images"></i>
+                    </button>
+                    <button type="button">
+                        😊
+                    </button>
+                </div>
+                <button type="submit">
+                    <img src="../../../../assets/images/Send-Button.png" alt="">
+                </button>
+            </form>
+
+        </section>
+    </div>
+    <div class="col-lg-12 col-xl-12 col-xxl-5 order-3 order-xl-3 order-xxl-2">
+        <section class="audio-transcription">
+            <div class="head">
+                <i class="fa-regular fa-file-audio"></i>
+                <h3>Audio Transcript</h3>
+            </div>
+            <div class="transcripts ag-scroll">
+                @for (transcript of transcripts; track $index) {
+                <div class="transcript">
+                    <div class="user">
+                        <img [src]="transcript.avatar" alt="">
+                        <h6>{{transcript.name}}</h6>
+                    </div>
+                    <div class="msg">
+                        <p class="text">{{transcript.message}}</p>
+                        <div class="time">{{transcript.timeStamp}}</div>
+                    </div>
+                </div>
+                }
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-3 col-xl-3 col-xxl-3 order-1 order-xl-2 order-xxl-3">
+        <section class="customer-info">
+            <div class="head">
+                <i class="fa-regular fa-file-audio"></i>
+                <h3>Customer Info</h3>
+            </div>
+            <div class="profile">
+                <div class="avatar">
+                    <img src="../../../../assets/images/Customer Avatar.png" alt="">
+                    <div class="status-bedge rounded-pill">
+                        <div class="dot"></div>
+                        <span>Available</span>
+                    </div>
+                </div>
+            </div>
+            <h3>Personal Info</h3>
+            <div class="details">
+                <div class="rows">
+                    <h6>Customer ID</h6>
+                    <p>A12345678</p>
+                </div>
+                <div class="rows">
+                    <h6>Full Name</h6>
+                    <p>Alex Smith</p>
+                </div>
+                <div class="rows">
+                    <h6>Joined Date</h6>
+                    <p>24 Year</p>
+                </div>
+            </div>
+            <h3>Contact Info</h3>
+            <div class="details">
+                <div class="rows">
+                    <h6>Email</h6>
+                    <p>{{'Jeoffrey@gamil.com'}}</p>
+                </div>
+                <div class="rows">
+                    <h6>Phone</h6>
+                    <p>+1 345 3598412</p>
+                </div>
+                <div class="rows">
+                    <h6>Address</h6>
+                    <p>Copell, Virginia</p>
+                </div>
+            </div>
+            <h3>His Story</h3>
+            <div class="details">
+                He had always been passionate about helping people. When she joined as a customer service agent, He was
+                excited about the opportunity to assist customers with their needs and queries.
+            </div>
+            <h3>Customer History</h3>
+            <div class="call-logs">
+                <div class="log">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>Sofia Jeans</h3>
+                    <div class="time">09:00 AM, Jun 13,24</div>
+                </div>
+                <div class="log">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>Sofia Jeans</h3>
+                    <div class="time">09:00 AM, Jun 13,24</div>
+                </div>
+                <div class="log">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>Sofia Jeans</h3>
+                    <div class="time">09:00 AM, Jun 13,24</div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</div>F

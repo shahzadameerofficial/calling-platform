@@ -1,0 +1,8 @@
+<div class="call-entry rounded-pill" *ngIf="entry">
+    <div class="call-icon"  [ngClass]="entry.status">
+        <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="name text-truncate">{{entry?.name}}</div>
+    <span>&bull;</span>
+    <span class="id">{{entry?.id}}</span>
+</div>

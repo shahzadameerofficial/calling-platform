@@ -1,0 +1,27 @@
+.call-entry {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background-color: var(--ag-foreground);
+
+    .call-icon {
+        padding: 10px 13px;
+        border-radius: 50%;
+        &.success {
+            color: var(--ag-success);
+            background-color: var(--ag-success-subtle);
+        }
+        &.failed{
+            color: var(--ag-danger);
+            background-color: var(--ag-danger-subtle);
+        }
+    }
+    .name{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    span.id{
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,27 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    h1{
+        font-size: 38px;
+    }
+    .dropdown{
+        .user{
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            .details{
+                line-height: 0.6rem;
+                user-select: none;
+               h5{
+                font-weight: bold;
+               }
+               span{
+                color: var(--ag-secondary-subtle);
+                font-size: 12px;
+               }
+            }
+        }
+    }
+}
