@@ -1,1 +1,42 @@
-<p>conversation works!</p>
+<section class="conversation">
+    <div class="head">
+        <i class="fa-regular fa-file-audio"></i>
+        <h3>Conversation</h3>
+    </div>
+    <div class="profile">
+        <img src="../../../../assets/images/Conversation.png" alt="">
+        <div class="titles">
+            <h4>Pitter William</h4>
+            <p>Operational Manager</p>
+        </div>
+    </div>
+    <div class="chats ag-scroll">
+        @for (chat of chats; track $index) {
+        <div class="chat" [ngClass]="chat.userId === myId ? 'me' : 'person'">
+            <img [src]="chat.avatar" alt="">
+            <div class="msg">
+                <p class="text">{{chat.message}}</p>
+                <div class="time">{{chat.timeStamp}}</div>
+            </div>
+        </div>
+        }
+    </div>
+    <form class="message-form">
+        <div class="input-box">
+            <button type="button">
+                <i class="ti ti-paperclip"></i>
+            </button>
+            <input type="text" placeholder="Write a message...">
+            <button type="button" class="gallery-btn">
+                <i class="ti ti-photo"></i>
+            </button>
+            <button type="button">
+                <i class="ti ti-mood-smile"></i>
+            </button>
+        </div>
+        <button type="submit">
+            <img src="../../../../assets/images/Send-Button.png" alt="">
+        </button>
+    </form>
+
+</section>

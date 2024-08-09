@@ -1,0 +1,62 @@
+.audio-transcription {
+    background-color: var(--ag-background);
+    border-radius: 2rem;
+    padding: 1.5rem;
+    height: 100%;
+
+    &>.head {
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+        margin-bottom: 1rem;
+        color: var(--ag-black);
+
+        h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    .transcripts {
+        background-color: var(--ag-white);
+        max-height: 65vh;
+        overflow-y: auto;
+        padding: 1.5rem;
+        border-radius: 30px;
+
+        & .transcript {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                h6 {
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: var(--ag-black);
+                }
+            }
+
+            .msg {
+                .text {
+                    margin-bottom: 0.2rem;
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: var(--ag-secondary-subtle);
+                }
+
+                .time {
+                    font-size: 10px;
+                    font-weight: bold;
+                    color: var(--ag-primary);
+                }
+            }
+
+        }
+    }
+}

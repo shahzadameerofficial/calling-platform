@@ -2,11 +2,8 @@ import { Component } from '@angular/core';
 import { CircleProgressComponent } from '../../../components/common/circle-progress/circle-progress.component';
 import { CallEntryComponent } from "../../../components/common/call-entry/call-entry.component";
 import { CallCenterLoadChartComponent } from './call-center-load-chart/call-center-load-chart.component';
-
 import { DragDropModule } from '@angular/cdk/drag-drop';
-
 import { FormsModule } from '@angular/forms';
-
 import { CommonModule } from '@angular/common';
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
@@ -61,5 +58,12 @@ export class OverviewComponent {
     if (event.key === 'Enter') {
       this.updateTitle(item);
     }
+    if (event.key === 'Escape') {
+      this.cancleEditing(item)
+    }
+
+  }
+  cancleEditing(item: any) {
+    item.editing = false
   }
 }

@@ -1,0 +1,115 @@
+.customer-info {
+    background-color: var(--ag-background);
+    border-radius: 2rem;
+    padding: 1.5rem;
+    height: 100%;
+    &>.head {
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+        margin-bottom: 1rem;
+        color: var(--ag-black);
+
+        h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .avatar {
+            position: relative;
+
+            .status-bedge {
+                background-color: var(--ag-foreground);
+                color: var(--ag-success);
+                display: flex;
+                align-items: center;
+                padding: 5px 9px;
+                width: max-content;
+                gap: 0.5rem;
+                margin: auto;
+                translate: 0 -10px;
+                font-size: 10px;
+                font-weight: bold;
+
+                .dot {
+                    width: 5px;
+                    height: 5px;
+                    background-color: var(--ag-success);
+                    border-radius: 50%;
+                }
+            }
+        }
+
+    }
+
+    &>h3 {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: var(--ag-black);
+    }
+
+    .details {
+        border-radius: 20px;
+        padding: 1rem;
+        background-color: var(--ag-white);
+        margin-bottom: 1rem;
+        font-size: 12px;
+        color: var(--ag-secondary-subtle);
+
+        .rows {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+
+            h6 {
+                font-size: 12px;
+                font-weight: 500;
+                color: var(--ag-secondary-subtle);
+            }
+
+            p {
+                font-weight: bold;
+                font-size: 12px;
+                color: var(--ag-secondary);
+            }
+        }
+    }
+
+    .call-logs {
+        .log {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 14px;
+            padding: 12px;
+            border-radius: 50px;
+            background-color: var(--ag-white);
+            margin-bottom: 0.5rem;
+
+            i {
+                color: var(--ag-success);
+            }
+
+            h3 {
+                font-weight: bold;
+                font-size: 14px;
+                color: var(--ag-black);
+            }
+
+            .time {
+                font-size: 10px;
+                color: var(--ag-secondary-subtle);
+            }
+
+        }
+    }
+}

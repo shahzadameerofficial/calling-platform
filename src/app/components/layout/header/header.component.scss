@@ -1,26 +1,40 @@
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 2rem 1.5rem;
-    h1{
+
+    h1 {
+        color: var(--ag-black);
         font-size: 38px;
     }
-    .dropdown{
-        .user{
+
+    .dropdown {
+
+        
+
+        .dropdown-toggle::after {
+            border-top: .3em solid var(--ag-black);
+        }
+
+        .user {
             display: flex;
             align-items: center;
             gap: 0.7rem;
-            .details{
+
+            .details {
                 line-height: 0.6rem;
                 user-select: none;
-               h5{
-                font-weight: bold;
-               }
-               span{
-                color: var(--ag-secondary-subtle);
-                font-size: 12px;
-               }
+
+                h5 {
+                    font-weight: bold;
+                    color: var(--ag-black);
+                }
+
+                span {
+                    color: var(--ag-secondary-subtle);
+                    font-size: 12px;
+                }
             }
         }
     }

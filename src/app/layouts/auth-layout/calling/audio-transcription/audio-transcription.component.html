@@ -1,1 +1,20 @@
-<p>audio-transcription works!</p>
+<section class="audio-transcription">
+    <div class="head">
+        <i class="fa-regular fa-file-audio"></i>
+        <h3>Audio Transcript</h3>
+    </div>
+    <div class="transcripts ag-scroll">
+        @for (transcript of transcripts; track $index) {
+        <div class="transcript">
+            <div class="user">
+                <img [src]="transcript.avatar" alt="">
+                <h6>{{transcript.name}}</h6>
+            </div>
+            <div class="msg">
+                <p class="text">{{transcript.message}}</p>
+                <div class="time">{{transcript.timeStamp}}</div>
+            </div>
+        </div>
+        }
+    </div>
+</section>

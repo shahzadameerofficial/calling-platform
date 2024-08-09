@@ -1,11 +1,14 @@
 #waveform {
   width: 100%;
-  height: 128px;
 }
 
 .audio-player {
   position: relative;
   overflow: hidden;
+  background-color: var(--ag-background);
+  display: flex;
+  align-items: center;
+  
   button{
     border: 0;
     outline: 0;

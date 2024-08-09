@@ -1,21 +1,27 @@
-.container-fluid{
-    section{
+.container-fluid {
+    section {
         background-color: var(--ag-background);
         border-radius: 2rem;
         padding: 1.5rem;
         margin-bottom: 1rem;
-        &.notification{
-            .head{
+        height: 100%;
+
+        &.notification {
+            .head {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                .tab-title{
+
+                .tab-title {
                     display: flex;
                     align-items: center;
                     gap: .4rem;
-                    .fa-bell{
+                    color: var(--ag-black);
+
+                    .fa-bell {
                         position: relative;
-                        &::after{
+
+                        &::after {
                             content: '';
                             width: 8px;
                             height: 8px;
@@ -27,71 +33,108 @@
                             right: -2px;
                         }
                     }
-                    h5{
+
+                    h5 {
                         font-weight: 600;
                     }
                 }
-                a{
+
+                a {
                     color: var(--ag-primary);
                     font-size: 14px;
                     font-weight: bold;
                 }
             }
-            .noti{
+
+            .noti {
                 display: flex;
                 gap: 1rem;
                 margin-bottom: 1rem;
-                a{
-                    h4{
+
+                a {
+                    h4 {
                         color: var(--ag-black);
                         font-size: 14px;
                         font-weight: bold;
                     }
-                    p{
+
+                    p {
                         color: var(--ag-secondary);
                         font-size: 12px;
                     }
-                    span{
+
+                    span {
                         color: var(--ag-secondary-subtle);
                         font-size: 10px;
                     }
                 }
             }
         }
-        &.process{
+
+        &.process {
             display: flex;
             align-items: center;
             gap: 1rem;
-            .details{
+            color: var(--ag-black);
+
+            .details {
                 text-align: center;
-                h3{
+
+                h3 {
                     font-size: 1.5rem;
                     font-weight: bold;
 
                 }
-                p{
+
+                p {
+
+                    color: var(--ag-secondary-subtle);
                     font-size: 14px;
-                    span{
+
+                    span {
                         color: var(--ag-primary);
                     }
                 }
             }
+
             @media screen and (max-width: 1399px) {
-                &.process{
+                &.process {
                     flex-direction: column;
                 }
             }
         }
-        &.logs{
+
+        &.logs {
             min-height: auto;
-            h4{
+            color: var(--ag-black);
+            .editor{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                input {
+                    border: 1px solid var(--ag-secondary-subtle);
+                    background-color: var(--ag-white);
+                    color: var(--ag-black);
+                    padding: 4px 8px;
+                    border-radius: 30px;
+                    margin: 4px;
+                    width: 100%;
+                    font-size: 14px;
+                }
+                button{
+                    border: 0;
+                    background-color: transparent;
+                    color: var(--ag-black);
+                    padding: 4px;
+                }
+            }
+            
+
+            h4 {
                 font-size: 18px;
                 font-weight: bold;
                 margin-bottom: 1rem;
             }
-        }
-        &.call-centre-chart{
-            
         }
     }
 }

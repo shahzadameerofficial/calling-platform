@@ -25,7 +25,7 @@ export class AudioPlayerComponent implements OnInit, OnDestroy, AfterViewInit {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme && savedTheme === 'dark') {
         wavcolor = '#E16449';
-        progcolor = '#E11249'
+        progcolor = '#888888'
       } 
       this.wavesurfer = WaveSurfer.create({
         container: this.che.nativeElement,
@@ -55,22 +55,18 @@ export class AudioPlayerComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
   formatTime(seconds: any) {
-    // Ensure the input is a number
     if (isNaN(seconds) || seconds < 0) {
       throw new Error("Invalid input: seconds must be a non-negative number.");
     }
 
-    // Calculate hours, minutes, and seconds
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const secs = Math.floor(seconds % 60);
 
-    // Format hours, minutes, and seconds with leading zeros
     const formattedHours = String(hours).padStart(2, '0');
     const formattedMinutes = String(minutes).padStart(2, '0');
     const formattedSeconds = String(secs).padStart(2, '0');
 
-    // Return formatted time
     return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
   }
 }
