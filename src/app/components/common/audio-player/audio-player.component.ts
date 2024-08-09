@@ -31,7 +31,7 @@ export class AudioPlayerComponent implements OnInit, OnDestroy, AfterViewInit {
         container: this.che.nativeElement,
         waveColor: wavcolor,
         progressColor: progcolor,
-        height: 150,
+        height: 100,
         barWidth: 3,
         cursorWidth: 1
       });

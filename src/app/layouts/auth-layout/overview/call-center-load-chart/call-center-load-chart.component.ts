@@ -1,112 +1,115 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-
 import Chart from 'chart.js/auto';
-
 
 @Component({
   selector: 'app-call-center-load-chart',
   standalone: true,
   imports: [],
   templateUrl: './call-center-load-chart.component.html',
-  styleUrl: './call-center-load-chart.component.scss'
+  styleUrls: ['./call-center-load-chart.component.scss']
 })
 export class CallCenterLoadChartComponent implements AfterViewInit {
   @ViewChild('myChart') myChart!: ElementRef<HTMLCanvasElement>;
+
   ngAfterViewInit(): void {
     new Chart(this.myChart.nativeElement, {
-      type: 'line', // Chart type
+      type: 'line',
       data: {
         labels: ['Jun 06', 'Jun 08', 'Jun 09', 'Jun 10', 'Jun 11', 'Jun 12', 'Jun 13', 'Jun 14', 'Jun 15'],
         datasets: [
           {
             label: 'Fact',
-            data: [10000, 10000, 23000, 24000, 25000, 37000, 42000, 42000, 43000, 47000, 51000, 51000, 53000, 54000, 59000, 60000, 62000, 63000,], // Replace with actual data
-            borderColor: '#E16449', // Adjust colors as needed
+            data: [10000, 10000, 23000, 24000, 25000, 37000, 42000, 42000, 43000, 47000, 51000, 51000, 53000, 54000, 59000, 60000, 62000, 63000],
+            borderColor: '#F76D47',
             fill: true,
             tension: 0.4,
-            backgroundColor: '#e165490e',
+            backgroundColor: '#F76D4710', // Slight fill color with transparency
+            borderWidth: 1, // Thinner line
+            pointRadius: 0,
           },
           {
             label: 'Forecast',
-            data: [5000, 20000, 34000, 32000, 19000, 26000, 17000, 19900, 15000, 25000, 38000, 30000, 42000, 47000, 490000, 42000, 50000, 51000, 47000], // Replace with actual data
-            borderColor: 'orange', // Adjust colors as needed
-            fill: false,
-            borderDash: [1], // Dashed line for forecast
-            tension: 0.4
+            data: [5000, 20000, 34000, 32000, 19000, 26000, 17000, 19900, 15000, 25000, 38000, 30000, 42000, 47000, 49000, 42000, 50000, 51000, 47000],
+            borderColor: '#F76D47',
+            fill: true,
+            borderDash: [5, 3], // Tighter dashed line
+            tension: 0.4,
+            backgroundColor: '#F76D4710', // Slight fill color with transparency
+            borderWidth: 1, // Thinner line
+            pointRadius: 0,
           }
         ]
       },
       options: {
-        responsive: true, // Make the chart responsive
-        maintainAspectRatio: true, // Allow the chart to adjust its aspect ratio
-        
+        responsive: true,
+        maintainAspectRatio: true,
         scales: {
           x: {
             grid: {
-              display: false // Remove x-axis grid lines
+              display: false
             },
             ticks: {
               font: {
                 size: 12,
-                family: 'Satoshi-Regular' // Adjust font color and size
+                family: 'Satoshi-Regular'
               }
             }
           },
           y: {
-            
             grid: {
-              display: true // Remove x-axis grid lines
+              display: true,
+              color: '#e0e0e0',
             },
             beginAtZero: true,
             ticks: {
               font: {
                 size: 12,
-                family: 'Satoshi-Regular'// Adjust font color and size
-              }
+                family: 'Satoshi-Regular'
+              },
+              callback: function(value) {
+                return value + 'k'; // Add 'k' suffix for thousands
+              },
+              padding: 10, // Adds space between label and grid line
             },
             max: 60000
           }
         },
         plugins: {
-          
           legend: {
-            
             position: 'top',
             align: 'end',
             labels: {
               font: {
                 size: 12,
-                family: 'Satoshi-Regular' // Adjust font color and size
+                family: 'Satoshi-Regular'
               },
               generateLabels: function(chart) {
-                // Get the default legend items
                 const original = Chart.defaults.plugins.legend.labels.generateLabels(chart);
-                // Modify the legend items
                 return original.map(label => {
-                    // Set the dot size and color
-                    label.pointStyle = 'circle';
-                    label.borderRadius = 5; // Size of the dot
-                    return label;
+                  label.pointStyle = 'circle';
+                  label.borderRadius = 5;
+                  return label;
                 });
-            }
+              }
             },
-            
           },
           title: {
             display: true,
-            text: 'Call Center Load',
+            text: 'Call Center Load', // Icon in the title
             position: 'top',
             align: 'start',
-            font:{
+            font: {
               size: 18,
               family: 'Satoshi-Regular',
               weight: 'bold'
             },
-            
-          },
+            padding: {
+              top: 5,
+              bottom: 5
+            }
+          }
         }
       }
     });
   }
-
 }

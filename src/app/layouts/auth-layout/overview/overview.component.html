@@ -104,15 +104,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-xxl-5">
+        <div class="col-xl-6 col-xxl-5 mt-4 mt-xl-0">
             <section class="logs">
                 <div class="row">
                     <div class="col-sm-6">
                         <h4><i class="fa-solid fa-phone"></i> Active Call ({{ activeCall.length }})</h4>
-                        <div cdkDropList #activeCallList="cdkDropList" [cdkDropListData]="activeCall"
-                            [cdkDropListConnectedTo]="[followUpList]" class="list" (cdkDropListDropped)="drop($event)">
+                        <div class="list h-100 drop-zone" cdkDropList #activeCallList="cdkDropList" [cdkDropListData]="activeCall"
+                            [cdkDropListConnectedTo]="[followUpList]" (cdkDropListDropped)="drop($event)">
                             @for (entry of activeCall; track $index) {
-                            <div class="my-1" cdkDrag>
+                            <div class="my-1 drag-item" cdkDrag>
                                 <app-call-entry [entry]="entry"></app-call-entry>
                                 @if (entry?.editing) {
                                     <div class="editor">
@@ -125,9 +125,9 @@
                             }
                         </div>
                     </div>
-                    <div class="mt-xs-4 mt-sm-0 col-sm-6">
+                    <div class="col-sm-6 mt-4 mt-sm-0">
                         <h4><i class="fa-solid fa-phone"></i> Follow Up ({{ followUp.length }})</h4>
-                        <div class="list h-100" cdkDropList #followUpList="cdkDropList" [cdkDropListData]="followUp"
+                        <div class="list h-100 drop-zone" cdkDropList #followUpList="cdkDropList" [cdkDropListData]="followUp"
                             [cdkDropListConnectedTo]="[activeCallList]" (cdkDropListDropped)="drop($event)">
                             @for (entry of followUp; track $index) {
                             <div class="my-1" cdkDrag>

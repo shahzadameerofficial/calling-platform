@@ -1,4 +1,45 @@
-.main-view{
+/* Custom CSS for static sidebar width */
+.container-fluid {
+    padding: 0;
+}
+
+.sidebar {
+    width: 250px; /* Default width for sidebar */
+    flex-shrink: 0;
+}
+
+.main-view {
+    flex-grow: 1;
+    width: calc(100% - 250px); /* Adjust the width of the main content */
     background-color: var(--ag-white);
     border-radius: 4rem;
+}
+
+/* Flexbox layout for the main content */
+.min-vh-100 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Remove margin from the row */
+.row {
+    margin: 0;
+}
+
+/* Padding adjustment */
+.pb-4 {
+    padding-bottom: 1.5rem;
+}
+
+/* Media query for lg breakpoint and above */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100% !important; /* Sidebar takes full width */
+    }
+
+    .main-view {
+        width: 100%; /* Main content also takes full width */
+        margin-left: 0; /* Remove any left margin if added */
+    }
 }

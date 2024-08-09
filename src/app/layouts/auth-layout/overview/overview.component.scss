@@ -78,8 +78,6 @@
             color: var(--ag-black);
 
             .details {
-                text-align: center;
-
                 h3 {
                     font-size: 1.5rem;
                     font-weight: bold;
@@ -107,6 +105,14 @@
         &.logs {
             min-height: auto;
             color: var(--ag-black);
+            .drag-item{
+                cursor: pointer;
+            }
+            .drop-zone .cdk-drag-placeholder {
+                    opacity: .5;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    border-radius: 50rem;
+            }
             .editor{
                 display: flex;
                 align-items: center;
