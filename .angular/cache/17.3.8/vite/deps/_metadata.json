@@ -1,0 +1,76 @@
+{
+  "hash": "433c79d1",
+  "configHash": "d564c377",
+  "lockfileHash": "20b4a647",
+  "browserHash": "0fc2ba70",
+  "optimized": {
+    "@angular/cdk/drag-drop": {
+      "src": "../../../../../node_modules/@angular/cdk/fesm2022/drag-drop.mjs",
+      "file": "@angular_cdk_drag-drop.js",
+      "fileHash": "34084317",
+      "needsInterop": false
+    },
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "cc138193",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "1863e920",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "b02842a2",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "c0a07058",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "979a04ad",
+      "needsInterop": false
+    },
+    "chart.js/auto": {
+      "src": "../../../../../node_modules/chart.js/auto/auto.js",
+      "file": "chart__js_auto.js",
+      "fileHash": "59fc1636",
+      "needsInterop": false
+    },
+    "ng-circle-progress": {
+      "src": "../../../../../node_modules/ng-circle-progress/fesm2020/ng-circle-progress.mjs",
+      "file": "ng-circle-progress.js",
+      "fileHash": "1aeab9af",
+      "needsInterop": false
+    },
+    "wavesurfer.js": {
+      "src": "../../../../../node_modules/wavesurfer.js/dist/wavesurfer.esm.js",
+      "file": "wavesurfer__js.js",
+      "fileHash": "82a98e07",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-R3UHO7I7": {
+      "file": "chunk-R3UHO7I7.js"
+    },
+    "chunk-MDDC3AN2": {
+      "file": "chunk-MDDC3AN2.js"
+    },
+    "chunk-AFJG5XQB": {
+      "file": "chunk-AFJG5XQB.js"
+    },
+    "chunk-J4B6MK7R": {
+      "file": "chunk-J4B6MK7R.js"
+    }
+  }
+}
