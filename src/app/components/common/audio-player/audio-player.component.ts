@@ -35,7 +35,7 @@ export class AudioPlayerComponent implements OnInit, OnDestroy, AfterViewInit {
         barWidth: 3,
         cursorWidth: 1
       });
-      this.wavesurfer.load('assets/YPHYAG.wav');
+      this.wavesurfer.load('assets/YPHYAG.mp3');
     }
   }
 
